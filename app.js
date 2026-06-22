@@ -58,6 +58,12 @@ function conectarAlLobby() {
         document.getElementById('btn-entrar').disabled = true;
     };
 
+    // === AGREGA ESTE BLOQUE PARA DIAGNÓSTICO ===
+    socket.onerror = (error) => {
+        console.error("Error detectado en el WebSocket:", error);
+        alert("No se pudo conectar al servidor. Revisa la consola del navegador (F12) o verifica si el servidor en Render está activo.");
+    };
+
     socket.onmessage = (event) => {
         const { type, data } = JSON.parse(event.data);
 
