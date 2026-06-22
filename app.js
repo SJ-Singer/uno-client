@@ -40,7 +40,7 @@ function obtenerRutaImagen(carta) {
     const colorEng = colores[carta.color] || carta.color; 
     const valorEng = valores[carta.value] || carta.value;
 
-    return `assets/${colorEng}_${valorEng}.png`;
+    return `${colorEng}_${valorEng}.png`;
 }
 
 // 3. CONEXIÓN AL SERVIDOR (LOBBY) 🔌
