@@ -49,7 +49,7 @@ function conectarAlLobby() {
     if (!nombre) return alert("Por favor, introduce un nombre válido.");
 
     // Crear túnel WebSocket local
-    socket = new WebSocket(`https://uno-back-7wqz.onrender.com`);
+    socket = new WebSocket('wss://uno-back-7wqz.onrender.com');
 
     socket.onopen = () => {
         // Enviar evento de unión inmediatamente al conectar [cite: 135]
