@@ -49,17 +49,7 @@ function conectarAlLobby() {
     if (!nombre) return alert("Por favor, introduce un nombre válido.");
 
     // Crear túnel WebSocket local
-    // Detectar si estamos ejecutando en local o en GitHub Pages
-const esLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-
-// SI ES LOCAL: Usa el host de tu PC (ej. localhost:3000)
-// SI ES PRODUCCIÓN: Reemplaza con la URL que te dé Render (SIN el https://, usa wss://)
-const URL_SERVIDOR = esLocal 
-    ? `ws://${window.location.host}` 
-    : `wss://tu-servidor-uno.onrender.com`; 
-
-// Crear túnel WebSocket apuntando al lugar correcto
-socket = new WebSocket(URL_SERVIDOR);
+    socket = new WebSocket(`https://uno-back-7wqz.onrender.com`);
 
     socket.onopen = () => {
         // Enviar evento de unión inmediatamente al conectar [cite: 135]
